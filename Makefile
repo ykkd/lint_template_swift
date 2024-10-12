@@ -32,8 +32,8 @@ setup-node: ## setup node version management environment
 	cat scripts/lint-setup/zshrc_cp.txt >> ~/.zshrc
 	source ~/.zshrc
 	brew install nodenv
-	nodenv install 18.1.0
-	nodenv local 18.1.0
+	nodenv install 22.8.0
+	nodenv local 22.8.0
 	
 .PHONY: setup-precommit-tool
 setup-precommit-tool: ## setup tools for linting at pre-commit
