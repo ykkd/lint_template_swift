@@ -32,23 +32,20 @@ setup-node: ## setup node version management environment
 	cat scripts/lint-setup/zshrc_cp.txt >> ~/.zshrc
 	source ~/.zshrc
 	brew install nodenv
-	nodenv install 18.1.0
-	nodenv local 18.1.0
+	nodenv install 22.8.0
+	nodenv local 22.8.0
 	
 .PHONY: setup-precommit-tool
 setup-precommit-tool: ## setup tools for linting at pre-commit
 	echo "${TEXT_RED}run 'make setup-node' if the specified version of node is not installed.${TEXT_NO_COLOR}"
-	npm install yarn -d
-	npx yarn add husky lint-staged @commitlint/config-conventional @commitlint/cli -d
-	npx yarn install
-	npx yarn husky install
-	sh scripts/lint-setup/huskyrc.sh
-	npx husky add .husky/commit-msg "npx yarn commitlint -e"
-	npx husky add .husky/pre-commit "npx yarn lint-staged"
+	npm install --save-dev husky lint-staged @commitlint/{cli,config-conventional} && \
+	npx husky init && \
+	sh scripts/lint-setup/setup_husky_init.sh && \
+	echo "npx lint-staged" > .husky/pre-commit && \
+	echo "npx --no -- commitlint --edit $$1" > .husky/commit-msg
 
 .PHONY: remove-precommit-tool
 remove-precommit-tool: ## remove tools for linting at pre-commit
-	npx yarn remove husky lint-staged @commitlint/config-conventional @commitlint/cli -d
-	npm uninstall yarn -d
+	npm uninstall --save-dev husky lint-staged @commitlint/cli @commitlint/config-conventional
 	npm list -d
 	npm list -g
