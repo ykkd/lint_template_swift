@@ -1,12 +1,13 @@
 {
+  "originHash" : "7c662a220abb1a00fbe5ef81ba2e74ab2ffc2d8bcdfbcae196c1d66bd68e87e6",
   "pins" : [
     {
       "identity" : "mint",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/yonaskolb/Mint.git",
       "state" : {
-        "revision" : "6edb52a8e6d211b7aa0e72abd7d4d0726f684808",
-        "version" : "0.17.2"
+        "revision" : "808c2d928552f4bac16ccc83654d3a04f328f1ae",
+        "version" : "0.17.5"
       }
     },
     {
@@ -50,10 +51,10 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/mxcl/Version.git",
       "state" : {
-        "revision" : "1fe824b80d89201652e7eca7c9252269a1d85e25",
-        "version" : "2.0.1"
+        "revision" : "303a0f916772545e1e8667d3104f83be708a723c",
+        "version" : "2.1.0"
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }
