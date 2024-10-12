@@ -1,16 +1,18 @@
 {
-  "dependencies": {
-    "@commitlint/cli": "^17.7.1",
-    "@commitlint/config-conventional": "^17.7.0",
-    "husky": "^8.0.3",
-    "lint-staged": "^14.0.1",
-    "yarn": "^1.22.19"
+  "devDependencies": {
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10"
+  },
+  "scripts": {
+    "prepare": "husky"
   },
   "lint-staged": {
     "./**/*.swift": [
       "Tools/Common/.build/release/mint run swiftformat",
-      "Tools/Common/.build/release/mint run swiftlint --fix --quiet --config .swiftlint-diff.yml",
-      "Tools/Common/.build/release/mint run swiftlint lint --config .swiftlint-diff.yml"
+      "Tools/Common/.build/release/mint run swiftlint swiftlint --fix --quiet --config .swiftlint-diff.yml",
+      "Tools/Common/.build/release/mint run swiftlint swiftlint --config .swiftlint-diff.yml"
     ]
   }
 }
