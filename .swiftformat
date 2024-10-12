@@ -2,7 +2,7 @@
 ## https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md
 
 # format options
---swiftversion 5.7
+--swiftversion 6.0
 --self remove # Explicit self: "insert", "remove" (default) or "init-only" [R-TOON固有]
 --typeblanklines preserve # スコープの先頭の空白行は現状を保つ
 --lineaftermarks false # "MARK:"の後に空白行を挿入しない
